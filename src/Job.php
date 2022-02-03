@@ -60,7 +60,7 @@ abstract class Job extends AbstractQueuedJob
     public function setup(): void
     {
         parent::setup();
-        $this->totalSteps = count($this->URLsToProcess);
+        $this->totalSteps = count($this->URLsToProcess ?: []);
     }
 
     public function getSignature(): string
